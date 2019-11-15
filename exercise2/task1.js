@@ -1,5 +1,5 @@
 var input = prompt("Enter number","Number");
-function calc(i)  {
+function calc(i) {
     var x = 0;
     var sum = 0;
     while(i != x){
