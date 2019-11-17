@@ -1,14 +1,15 @@
 function check(){
     if(document.getElementById("colb").checked){
-        return "Blue";
+        document.getElementById("input").value = "Blue";
     }
-    if(document.getElementById("colr").checked){
-        return "Red";
+    else if(document.getElementById("colr").checked){
+        document.getElementById("input").value = "Red";
     }
-    if(document.getElementById("coly").checked){
-        return "Yellow";
+    else if(document.getElementById("coly").checked){
+        document.getElementById("input").value = "Yellow";
     }
-    if(document.getElementById("colg").checked){
-        return "Green";
+    else if(document.getElementById("colg").checked){
+        document.getElementById("input").value = "Green";
     }
+    console.log(document.getElementById("input").value);
 }
