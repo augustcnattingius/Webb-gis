@@ -1,3 +1,14 @@
-var x = document.getElementById("col").checked;
-console.log(x);
-document.getElementById("input").innerHTML = x;
+function check(){
+    if(document.getElementById("colb").checked){
+        return "Blue";
+    }
+    if(document.getElementById("colr").checked){
+        return "Red";
+    }
+    if(document.getElementById("coly").checked){
+        return "Yellow";
+    }
+    if(document.getElementById("colg").checked){
+        return "Green";
+    }
+}
