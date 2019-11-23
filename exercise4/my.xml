@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE FeatureCollection SYSTEM "gmlfeature.dtd">
+
+<FeatureCollection typeName="ex">
+    <name>exempel</name>
+    <boundedBy>
+        <Box srsName="EPSG:3008">
+            <coordinates>
+                0,0
+                0,100
+                100,100
+                100,0    
+            </coordinates>
+        </Box>
+    </boundedBy>
+    <featureMember typeName="E22">
+        <Feature typeName="Motorway">
+            <geometricProperty typeName="väg">
+                <LineString>
+                    <coordinates>
+                        0,0
+                        100,100
+                    </coordinates>
+                </LineString>
+            </geometricProperty>
+        </Feature>
+    </featureMember>
+    <featureMember typeName="City">
+        <Feature typeName="Lund">
+            <property typeName="Inhabitants">
+                100 000
+            </property>
+            <geometricProperty typeName="Stad">
+                <Polygon>
+                    <outerBoundaryIs>
+                        <LinearRing>
+                            <coordinates>
+                                10,10
+                                10,30
+                                5,20
+                            </coordinates>
+                        </LinearRing>
+                    </outerBoundaryIs>
+                </Polygon>
+            </geometricProperty>
+        </Feature>
+    </featureMember>
+    
+</FeatureCollection>
