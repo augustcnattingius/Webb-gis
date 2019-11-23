@@ -7,16 +7,15 @@
         <Box srsName="EPSG:3008">
             <coordinates>
                 0,0
-                0,100
-                100,100
-                100,0    
+                100,100  
             </coordinates>
         </Box>
     </boundedBy>
     <featureMember typeName="E22">
         <Feature typeName="Motorway">
+            <name>E22</name>
             <geometricProperty typeName="väg">
-                <LineString>
+                <LineString srsName="EPSG:3008">
                     <coordinates>
                         0,0
                         100,100
@@ -27,6 +26,7 @@
     </featureMember>
     <featureMember typeName="City">
         <Feature typeName="Lund">
+            <name>Lund</name>
             <property typeName="Inhabitants">
                 100 000
             </property>
@@ -38,6 +38,7 @@
                                 10,10
                                 10,30
                                 5,20
+                                10,10
                             </coordinates>
                         </LinearRing>
                     </outerBoundaryIs>
