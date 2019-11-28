@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<!--
+You should ALWAYS have the document type declaration in the beginning of all HTML documents.
+That will tell the browser that this is an HTML document that follows the specified standard. If the browser
+knows the document type it will run in Standards Complience Mode. Otherwise it will run in Quirks
+Mode which is not as fast nor acurate because it basically have to make some educated guesses on how to
+render the code. You also need the document type to validate the page and you should always validate
+your pages. Think of it as a spell check.
+-->
+
+<!--
+This file is created for exercises in Internet GIS Course, Lund University
+Author: Lars Harrie, Tobias Lennartsson and Roger Groth
+Date: 2005-01-13, updated 2009-01-16
+Function: The program creates some fields. By adding values to these fields
+the user can creates a WMS GetMap query and finally submitt this query.
+The map will be shown in a new browser window.
+Author:
+Date:
+-->
+
+<html>
+<head>
+	<title>Create request</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<style type="text/css">
+		/*
+		http://www.w3schools.com/css/
+		http://gallery.theopalgroup.com/selectoracle/
+		CSS rules are used to set the styling of the page. The idea is to separate content
+		from styling so that maintance is easier. Note that the HTML code in the body does
+		not contain any information about how it should be presented. That is controlled by
+		the CSS rules.
+		*/
+		body {font-family:Arial,Verdana,sans-serif;font-size:80%;margin:20px 10px 10px 10px;}
+		img {border:none;}
+		label {font-weight:bold;}
+		input,select,textarea {display:block;margin-bottom:7px;}
+		input[type=text],select,textarea {border:solid 1px black;background-color:rgb(240,240,240);width:400px;}
+		input[type=button] {font-weight:bold;border:ridge 2px darkgray;background-color:rgb(240,240,240);}
+		input[type=button]:hover {border:ridge 2px black;background-color:rgb(220,220,220);}
+		textarea {height:120px;}
+		p.valid {margin:30px 0px 10px 0px;}
+	</style>
+</head>
+<body>
+    
+    <!-- In these forms you can specify values for the parameters in the WMS GetMap request -->
+	<!-- In some forms you are restricted to certain values, in other forms it is free text -->
+    
+	<label>WMS server</label>
+	<select id="WMSURL">
+        <option value="0">Select WMS</option>
+        <option value="http://sampleserver1.arcgisonline.com/ArcGIS/services/Specialty/ESRI_StatesCitiesRivers_USA/MapServer/WMSServer?">SampleServerArcGIS</option>
+		<option value="http://wms1.agr.gc.ca/cgi-bin/mapquebec_fr?">Atlas agropédologique du SE de Montréal</option>
+		<option value="http://atlas.gc.ca/cgi-bin/atlaswms_en?">Atlas of Canada</option>
+		<option value="http://132.156.88.15/wmsconnector/com.esri.wms.Esrimap/energy_e?">GDR Web Map Service energy_e</option>
+	</select>
+    
+	<label>Layers</label>
+	<input type="text" id="WMSLayers">
+    
+	<label>Styles</label>
+    <input type="text" id="WMSStyles">
+    
+    <label>CRS</label>
+    <input type="text" id="WMSCRS">
+    
+    <label>X min</label>
+    <input type="text" id="WMSXmin">
+    
+    <label>Y min</label>
+    <input type="text" id="WMSYmin">
+    
+    <label>X max</label>
+    <input type="text" id="WMSXmax">
+    
+    <label>Y max</label>
+    <input type="text" id="WMSYmax">
+    
+    <label>Width</label>
+    <input type="text" id="WMSWidth">
+    
+    <label>Height</label>
+	<input type="text" id="WMSHeight">
+    
+    
+	<label>Format</label>
+	<select id="WMSFormat">
+		<option value="image/svg+xml">SVG</option>
+		<option value="application/xml">XML</option>
+		<option value="image/gif">GIF</option>
+		<option value="image/jpeg">JPG</option>
+		<option value="image/png">PNG</option>
+		<option value="image/tiff">TIFF</option>
+		<option value="image/x-ms-bmp">BMP</option>
+	</select>
+    
+	<input type="button" value="Compile request" onclick="compileRequest();">
+    
+  
+    <label>WMSQuery</label>
+    <textarea class="form-control" id="compiledQuery" value=" " rows="10" readonly></textarea>
+    <input type="button" value="Send request" onclick="sendRequest();">
+	
+<script src="task2.js"></script>
+</body>
+</html>
