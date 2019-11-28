@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Hello, world!</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="libs\bootstrap\bootstrap-4.0.0-beta.2-dist\css\bootstrap.min.css">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+    <!-- Our custom CSS -->
+    <link rel="stylesheet" href="css\main.css">
+
+  </head>
+
+  <!-- The body tag includes all visible content on the page -->
+  <body >
+    <div class="container">
+        <div class="jumbotron">
+            <!-- Feel free to change title and subtitle -->
+            <h1 class="display-3">Change this title</h1>
+            <p class="lead">Change this subtitle</p>
+          </div>
+          <div class="row">
+            <div class="col-3">
+              <!-- 
+                The ul tag is an unordered list with li tags as children. Each li tag contains an input of type checkbox. 
+                The onChange attribute specifies that the updateMapLayers() function should run when the checkbox's status changes (checked/unchecked).
+                The checked attribute means that the initial value of the checkbox should be checked.  
+              -->
+                <ul class="list-group">
+                    <li class="list-group-item"><div class="form-check">
+                        <label class="form-check-label">
+                          <input class="form-check-input" id='layer1CheckBox' type="checkbox" checked onChange="updateMapLayers()">
+                          <!-- Change this name to match the layer it controls -->
+                          Change this name
+                        </label>
+                      </div>
+                    </li>
+                    <li class="list-group-item"><div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" id='layer2CheckBox' type="checkbox" checked onClick="updateMapLayers()">
+                       <!-- Change this name to match the layer it controls -->
+                        Change this name
+                      </label>
+                    </div>
+                  </li>
+                  <li class="list-group-item"><div class="form-check">
+                    <label class="form-check-label">
+                      <input class="form-check-input" id='layer3CheckBox' type="checkbox" checked onClick="updateMapLayers()">
+                      <!-- Change this name to match the layer it controls -->
+                      Change this name
+                    </label>
+                  </div>
+                </li>
+                  </ul>
+            </div>
+            <div class="col-9">
+                    <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
+                      <!-- These are the butons in the top menu above the map. Each button is configured with onclick attribute that calls a corresponding function -->
+                            <button type="button" class="btn btn-secondary" onclick="zoomToExtent()"><i class="material-icons align-middle">zoom_out_map</i></button>
+                            <button type="button" class="btn btn-secondary" onclick="zoomIn()"><i class="material-icons align-middle">zoom_in</i></button>
+
+
+                            <!-- Add buttons for zooming out, pan rigth, pan up and pan down here-->
+
+
+
+
+                          </div>
+                          <br>
+              <!-- This is the image tag that the map gets rendered into -->
+              <img src="" alt="My map" id="imgMap">
+            </div>
+          </div>
+      </div>
+
+    <!-- JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="libs\jquery\jquery-3.2.1.slim.min.js"></script>
+    <script src="libs\popper\popper-1.12.3.min.js"></script>
+    <script src="libs\bootstrap\bootstrap-4.0.0-beta.2-dist\js\bootstrap.js"></script>
+    <!-- This line includes the javaScript file with our custom functions -->
+    <script src="javascript\staticMap.js"></script>
+  </body>
+</html>
