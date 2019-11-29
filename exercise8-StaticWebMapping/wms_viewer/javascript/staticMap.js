@@ -81,7 +81,11 @@ It should zoom out the map when the button is clicked
 Look at the zoomIn() function to get a hint
 */
 var zoomOut=function(){
-
+    newx1=UPDATED_BBOX.x1-((UPDATED_BBOX.x2-UPDATED_BBOX.x1)/4);
+    newy1=UPDATED_BBOX.y1-((UPDATED_BBOX.y2-UPDATED_BBOX.y1)/4);
+    newx2=UPDATED_BBOX.x2+((UPDATED_BBOX.x2-UPDATED_BBOX.x1)/4);
+    newy2=UPDATED_BBOX.y2+((UPDATED_BBOX.y2-UPDATED_BBOX.y1)/4);
+    updateMapBbox(newx1,newy1, newx2, newy2)
 }
 
 
@@ -106,7 +110,11 @@ The function should pan the map to the right when the button is clicked.
 Look at the panLeft() function to get a hint on how it could be done
 */
 var panRight=function(){
-
+    newy1=UPDATED_BBOX.y1;
+    newy2=UPDATED_BBOX.y2;
+    newx1=UPDATED_BBOX.x1-((UPDATED_BBOX.x2-UPDATED_BBOX.x1)/4);
+    newx2=UPDATED_BBOX.x2-((UPDATED_BBOX.x2-UPDATED_BBOX.x1)/4);
+    updateMapBbox(newx1,newy1,newx2,newy2);
 }
 
 
@@ -117,7 +125,11 @@ The function should pan the map upwards when the button is clicked.
 Look at the panLeft() function to get a hint on how it could be done
 */
 var panUp = function(){
-
+    newx1=UPDATED_BBOX.x1;
+    newx2=UPDATED_BBOX.x2;
+    newy1=UPDATED_BBOX.y1+((UPDATED_BBOX.y2-UPDATED_BBOX.y1)/4);
+    newy2=UPDATED_BBOX.y2+((UPDATED_BBOX.y2-UPDATED_BBOX.y1)/4);
+    updateMapBbox(newx1,newy1,newx2,newy2);
 }
 
 
@@ -128,7 +140,11 @@ The function should pan the map downwards when the button is clicked.
 Look at the panLeft() function to get a hint on how it could be done
 */
 var panDown = function(){
-
+    newx1=UPDATED_BBOX.x1;
+    newx2=UPDATED_BBOX.x2;
+    newy1=UPDATED_BBOX.y1-((UPDATED_BBOX.y2-UPDATED_BBOX.y1)/4);
+    newy2=UPDATED_BBOX.y2-((UPDATED_BBOX.y2-UPDATED_BBOX.y1)/4);
+    updateMapBbox(newx1,newy1,newx2,newy2);
 }
 
 
